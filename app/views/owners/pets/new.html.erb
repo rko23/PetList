@@ -1,0 +1,36 @@
+<%= render "partials/header" %>
+
+<%= form_tag("/owners/#{@owner.id}/pets") do %>
+        <h2 class="txt-center">Add Pet</h2>
+        <h5 class="txt-center">for <%= @owner.first_name%> <%= @owner.last_name%></h5>
+
+        <div class="container well small-container margin-top-20">
+            <div class="bold">
+                Pet Name
+            </div>
+            <div class="margin-top-10">
+                <input name="pet_name" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-10">
+                Age
+            </div>
+            <div class="margin-top-10">
+                <input name="age" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-10">
+                Breed
+            </div>
+            <div class="margin-top-10">
+                <input name="breed" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-10">
+                Photo
+            </div>
+            <div class="margin-top-10">
+                <input name="photo" type="text" class="form-control" />
+            </div>
+            <div class="margin-top-20 txt-center">
+                <button type="submit" class="btn btn-primary">Submit Pet</button>
+            </div>
+        </div>
+<% end %>

@@ -1,0 +1,59 @@
+<%= render "partials/header" %>
+
+<% @owners.each do |owner| %>
+<div class="container well small-container margin-top-20">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="md-font">
+                <%= owner.first_name %>
+            </div>
+            <div>
+                <%= owner.email %>
+            </div>
+            <div>
+                <%= owner.phone_number %>
+            </div>
+        </div>
+    </div>
+
+
+
+<% 
+pets = owner.pets 
+pets.each do |pet|
+%>
+    <div class="row margin-top-20">
+        <div class="col-sm-3">
+<!--            <img src="img/dog1.jpg" class="img-responsive" />  -->
+            <%= image_tag(pet.photo, class: "img-responsive") %>
+        </div>
+        <div class="col-sm-9">
+            <div>
+                <strong><%= pet.pet_name %></strong>
+            </div>
+            <div class="margin-top-10">
+                Age: <%=  pet.age %>
+            </div>
+            <div>
+                Breed: <%= pet.breed %>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+    <div class="row margin-top-20">
+        <div class="col-sm-12">
+            <a href="/owners/<%= owner.id %>/pets/new" class="btn btn-success">
+                <i class="fa fa-plus"></i>
+                Add Pet
+            </a>
+
+            <button class="btn btn-danger margin-left-5">
+                <i class="fa fa-remove"></i>
+                Remove Pet
+            </button>
+        </div>
+    </div>
+</div>
+<% end %>
+

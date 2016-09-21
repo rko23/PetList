@@ -1,0 +1,35 @@
+<%= render "partials/header" %>
+
+<h2 class="txt-center">Add Owner</h2>
+
+<%= form_tag("/owners") do %>
+<div class="container well small-container margin-top-20">
+    <div class="bold">
+        First Name
+    </div>
+    <div class="margin-top-10">
+        <input name="first_name" type="text" class="form-control" />
+    </div>
+    <div class="bold margin-top-10">
+        Last Name
+    </div>
+    <div class="margin-top-10">
+        <input name="last_name" type="text" class="form-control" />
+    </div>
+    <div class="bold margin-top-10">
+        Email
+    </div>
+    <div class="margin-top-10">
+        <input name="email" type="email" class="form-control" />
+    </div>
+    <div class="bold margin-top-10">
+        Phone Number
+    </div>
+    <div class="margin-top-10">
+        <input name="phone_number" type="tel" class="form-control" />
+    </div>
+    <div class="margin-top-20 txt-center">
+        <button type="submit" class="btn btn-primary">Submit Owner</button>
+    </div>
+</div>
+<% end %>
